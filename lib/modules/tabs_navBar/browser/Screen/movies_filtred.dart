@@ -14,7 +14,7 @@ class MoviesFiltred extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.transparent,
       appBar: AppBar(
-        title: Text('${sharched.name}',style:  TextStyle(
+        title: Text('${sharched.name}',style: const  TextStyle(
           color: Colors.white,
           fontSize: 18,
           fontWeight: FontWeight.w700

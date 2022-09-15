@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import '../modules/tabs_navBar/Search/Search.dart';
+import '../modules/tabs_navBar/Search/screen/Search.dart';
 import '../modules/tabs_navBar/WatchedList/screen/watch_list_screen.dart';
 import '../modules/tabs_navBar/browser/Screen/browser_screen.dart';
 import '../modules/tabs_navBar/home/home_screen.dart';
-import '../provid/my_provider.dart';
+
 
 class HomePage extends StatefulWidget {
  static const String routename= "Home_page";

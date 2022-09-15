@@ -5,7 +5,7 @@ import '../../models/TopRatedRespons.dart';
 import '../../models/category_movie.dart';
 import '../../models/filtred_movies.dart';
 import '../../models/movies_respose.dart';
-import '../../modules/tabs_navBar/Search/Api_Search.dart';
+import '../../models/search_model.dart';
 import '../components/constant.dart';
 
 class ApiManager{
@@ -54,7 +54,8 @@ class ApiManager{
     }
 
   }
-  static Future<ApiSearch> getSearch(String q)async{
+  // Get Film Searched
+  static Future<SearchModel> getSearch(String q)async{
     var uri= Uri.https("api.themoviedb.org", "/3/search/movie",{
       "api_key" : "8447f6d466cb085704029ad005725822",
       "query":q
@@ -63,7 +64,7 @@ class ApiManager{
     try{
       var bodyString= getdta.body;
       var json= jsonDecode(bodyString);
-      var res= ApiSearch.fromJson(json);
+      var res= SearchModel.fromJson(json);
       return res;
     }catch (e){
       throw e;
