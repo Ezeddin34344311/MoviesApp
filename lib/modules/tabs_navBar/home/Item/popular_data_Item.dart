@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:movies_app/shared/components/add_firebase.dart';
 import '../../../../models/TopRatedRespons.dart';
 import '../../../../shared/components/constant.dart';
 
 
-class PopularDataItem extends StatelessWidget {
+class PopularDataItem extends StatefulWidget {
   Results results ;
   PopularDataItem({required this.results});
 
+  @override
+  State<PopularDataItem> createState() => _PopularDataItemState();
+}
+
+class _PopularDataItemState extends State<PopularDataItem> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -17,7 +23,7 @@ class PopularDataItem extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(8),
             child: Image.network(imageBaseURL +
-              ((results.backdropPath) ??
+              ((widget.results.backdropPath) ??
             '/tmU7GeKVybMWFButWEGl2M4GeiP.jpg'),
               height: 120,width: 80,fit: BoxFit.fitHeight,),
           ),
@@ -29,15 +35,31 @@ class PopularDataItem extends StatelessWidget {
         child: InkWell(
             onTap: (){
               //todo : add to fire base
+              widget.results.video = true;
+              setState(() {
+                
+              });
+              AddFirebase.addToFirebase(
+                context,
+                id: widget.results.id,
+                backdropPath:widget.results.backdropPath ,
+                overview: widget.results.overview,
+                releaseDate: widget.results.releaseDate,
+                title: widget.results.title,
+                video: widget.results.video,
+                voteAverage:widget.results.voteAverage ,
+                );
             },
             child: Stack(
               alignment: Alignment.topCenter,
-              children:[
-                Image.asset("assets/images/addToList.png",width: 35,height: 50,),
+              children:[ widget.results.video == false ?
+                Image.asset("assets/images/addToList.png",width: 35,height: 50,)
+                : Image.asset("assets/images/addToList.png",width: 35,height: 50,color: Colors.amberAccent,) ,
                 // firebase Condition
-                const Padding(
+                Padding(
                   padding:  EdgeInsets.only(top: 3),
-                  child: Icon(Icons.add, color: Colors.white,size: 16,),
+                  child: widget.results.video == false ?Icon(Icons.add, color: Colors.white,size: 16,)
+                                                       :Icon(Icons.check, color: Colors.white,size: 16,),
                 )
 
               ] ),),
@@ -46,4 +68,6 @@ class PopularDataItem extends StatelessWidget {
       ),
     );
   }
+
+  
 }

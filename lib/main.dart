@@ -3,13 +3,19 @@ import 'package:movies_app/provid/my_provider.dart';
 import 'package:provider/provider.dart';
 import 'home/home_screen.dart';
 import 'modules/tabs_navBar/browser/Screen/movies_filtred.dart';
-//_____________________________________________________________________________
-main(){
+import 'package:firebase_core/firebase_core.dart';
+
+main()async{
+
+
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+  );
   runApp(ChangeNotifierProvider(
       create: (context){
-
         return MyProviderApp();
       },
+     
       child: MyApp()));
 }
 

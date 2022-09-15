@@ -22,7 +22,7 @@ showLoading(BuildContext context, String text, {bool isCancelable = true}) {
       });
 }
 
-hideLoadingDialog(BuildContext context) {
+hideLoading(BuildContext context) {
   Navigator.pop(context);
 }
 

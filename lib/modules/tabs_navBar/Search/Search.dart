@@ -1,11 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import '../../../provid/my_provider.dart';
 import '../../../shared/network/api_manager.dart';
 import 'Api_Search.dart';
-import 'My_search.dart';
 import 'Showfilms.dart';
 
 class SearchScreen extends StatefulWidget {
@@ -133,7 +131,7 @@ class _SearchScreenState extends State<SearchScreen> {
               // print('edit');
               // print(newsList[0]);
               if(newsList.isEmpty){
-                return Image.asset("assets/images/no_films.png");
+                return Image.asset("assets/images/image_filmjpg.png");
               }
               return ListView.builder(
                   itemCount: newsList.length,
@@ -143,7 +141,7 @@ class _SearchScreenState extends State<SearchScreen> {
                   } ) ;
 
           }),
-           )
+           ) 
 
 
         ],
