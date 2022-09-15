@@ -5,6 +5,8 @@ import 'home/home_screen.dart';
 import 'modules/tabs_navBar/browser/Screen/movies_filtred.dart';
 import 'package:firebase_core/firebase_core.dart';
 
+import 'modules/tabs_navBar/details/movies_details.dart';
+
 main()async{
 
 
@@ -33,7 +35,8 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         HomePage.routename : (context) => HomePage(),
-        MoviesFiltred.routeName: (context) => MoviesFiltred()
+        MoviesFiltred.routeName: (context) => MoviesFiltred(),
+        MoviesDetails.routeName:(context)=>MoviesDetails()
       },
       initialRoute: HomePage.routename,
       debugShowCheckedModeBanner: false,

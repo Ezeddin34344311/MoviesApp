@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:movies_app/shared/components/add_firebase.dart';
+import '../../../../models/LatestResponse.dart';
 import '../../../../models/TopRatedRespons.dart';
 import '../../../../shared/components/constant.dart';
+import '../../details/movies_details.dart';
 
 
 class PopularDataItem extends StatefulWidget {
@@ -17,54 +19,60 @@ class _PopularDataItemState extends State<PopularDataItem> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: Stack(
-      //  alignment: Alignment.topLeft,
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(8),
-            child: Image.network(imageBaseURL +
-              ((widget.results.backdropPath) ??
-            '/tmU7GeKVybMWFButWEGl2M4GeiP.jpg'),
-              height: 120,width: 80,fit: BoxFit.fitHeight,),
-          ),
-      Positioned(
-        left: 0,
-        right: 60,
-        top: 0,
-        bottom: 90,
-        child: InkWell(
-            onTap: (){
-              //todo : add to fire base
-              widget.results.video = true;
-              setState(() {
-                
-              });
-              AddFirebase.addToFirebase(
-                context,
-                id: widget.results.id,
-                backdropPath:widget.results.backdropPath ,
-                overview: widget.results.overview,
-                releaseDate: widget.results.releaseDate,
-                title: widget.results.title,
-                video: widget.results.video,
-                voteAverage:widget.results.voteAverage ,
-                );
-            },
-            child: Stack(
-              alignment: Alignment.topCenter,
-              children:[ widget.results.video == false ?
-                Image.asset("assets/images/addToList.png",width: 35,height: 50,)
-                : Image.asset("assets/images/addToList.png",width: 35,height: 50,color: Colors.amberAccent,) ,
-                // firebase Condition
-                Padding(
-                  padding:  EdgeInsets.only(top: 3),
-                  child: widget.results.video == false ?Icon(Icons.add, color: Colors.white,size: 16,)
-                                                       :Icon(Icons.check, color: Colors.white,size: 16,),
-                )
+      child: InkWell(
+        onTap: (){Navigator.of(context)
+            .pushNamed(MoviesDetails.routeName,
+            arguments: widget.results);
+        },
+        child: Stack(
+        //  alignment: Alignment.topLeft,
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(8),
+              child: Image.network(imageBaseURL +
+                ((widget.results.backdropPath) ??
+              '/tmU7GeKVybMWFButWEGl2M4GeiP.jpg'),
+                height: 120,width: 80,fit: BoxFit.fitHeight,),
+            ),
+        Positioned(
+          left: 0,
+          right: 60,
+          top: 0,
+          bottom: 90,
+          child: InkWell(
+              onTap: (){
+                //todo : add to fire base
+                widget.results.video = true;
+                setState(() {
 
-              ] ),),
-      )
-        ],
+                });
+                AddFirebase.addToFirebase(
+                  context,
+                  id: widget.results.id,
+                  backdropPath:widget.results.backdropPath ,
+                  overview: widget.results.overview,
+                  releaseDate: widget.results.releaseDate,
+                  title: widget.results.title,
+                  video: widget.results.video,
+                  voteAverage:widget.results.voteAverage ,
+                  );
+              },
+              child: Stack(
+                alignment: Alignment.topCenter,
+                children:[ widget.results.video == false ?
+                  Image.asset("assets/images/addToList.png",width: 35,height: 50,)
+                  : Image.asset("assets/images/addToList.png",width: 35,height: 50,color: Colors.amberAccent,) ,
+                  // firebase Condition
+                  Padding(
+                    padding:  EdgeInsets.only(top: 3),
+                    child: widget.results.video == false ?Icon(Icons.add, color: Colors.white,size: 16,)
+                                                         :Icon(Icons.check, color: Colors.white,size: 16,),
+                  )
+
+                ] ),),
+        )
+          ],
+        ),
       ),
     );
   }

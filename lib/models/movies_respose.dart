@@ -1,3 +1,4 @@
+import 'package:movies_app/models/LatestResponse.dart';
 import 'package:movies_app/models/TopRatedRespons.dart';
 
 class MoviesResponse {

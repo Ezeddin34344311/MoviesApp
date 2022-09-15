@@ -5,6 +5,7 @@ import '../../models/TopRatedRespons.dart';
 import '../../models/category_movie.dart';
 import '../../models/filtred_movies.dart';
 import '../../models/movies_respose.dart';
+import '../../models/simillar_response.dart';
 import '../../modules/tabs_navBar/Search/Api_Search.dart';
 import '../components/constant.dart';
 
@@ -113,6 +114,21 @@ class ApiManager{
 
       throw e;
     }
+  }
+  static Future<SimillarResponse> getMoviesSimilar(int id)async{
+    var uri= Uri.https("api.themoviedb.org", "/3/movie/${id}/similar",{
+      "api_key" : "8447f6d466cb085704029ad005725822"
+    });
+    var getdta=await http.get(uri);
+    try{
+      var bodyString= getdta.body;
+      var json= jsonDecode(bodyString);
+      var res= SimillarResponse.fromJson(json);
+      return res;
+    }catch (e){
+      throw e;
+    }
+
   }
 }
 
