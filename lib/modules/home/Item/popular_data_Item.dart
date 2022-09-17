@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:movies_app/shared/components/add_firebase.dart';
-import '../../../../models/TopRatedRespons.dart';
-import '../../../../shared/components/constant.dart';
+import '../../../models/TopRatedRespons.dart';
+import '../../../shared/components/constant.dart';
 
 
 class PopularDataItem extends StatefulWidget {

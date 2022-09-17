@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../../models/TopRatedRespons.dart';
-import '../../../../shared/network/api_manager.dart';
+import '../../../models/TopRatedRespons.dart';
+import '../../../shared/network/api_manager.dart';
 import '../Item/feach_top_rated_item.dart';
 
 class FeachTopRated extends StatelessWidget {

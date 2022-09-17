@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:movies_app/models/watch_list_model.dart';
 
-import '../../../../shared/components/constant.dart';
+import '../../../shared/components/constant.dart';
 
 
 class WatchedListItem extends StatelessWidget {

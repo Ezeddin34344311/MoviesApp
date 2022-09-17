@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:movies_app/modules/tabs_navBar/browser/Item/filtred_item.dart';
-import '../../../../models/category_movie.dart';
-import '../../../../models/filtred_movies.dart';
-import '../../../../shared/network/api_manager.dart';
+import 'package:movies_app/modules/browser/Item/filtred_item.dart';
+import '../../../models/category_movie.dart';
+import '../../../models/filtred_movies.dart';
+import '../../../shared/network/api_manager.dart';
 
 class MoviesFiltred extends StatelessWidget {
   static const String routeName = 'movies_flitred';

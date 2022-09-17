@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:movies_app/modules/tabs_navBar/browser/Screen/movies_filtred.dart';
-import '../../../../models/category_movie.dart';
-import '../../../../shared/network/api_manager.dart';
+import 'package:movies_app/modules/browser/Screen/movies_filtred.dart';
+import '../../../models/category_movie.dart';
+import '../../../shared/network/api_manager.dart';
 import '../Item/category_item.dart';
 
 class BrowserScreen extends StatelessWidget {

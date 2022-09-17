@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../../models/movies_respose.dart';
-import '../../../../shared/network/api_manager.dart';
+import '../../../models/movies_respose.dart';
+import '../../../shared/network/api_manager.dart';
 import '../Item/popular_data_Item.dart';
 
 class FechPopularApi extends StatelessWidget {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../../shared/network/api_manager.dart';
-import '../../../../models/search_model.dart';
+import '../../../shared/network/api_manager.dart';
+import '../../../models/search_model.dart';
 import '../Item/search_item.dart';
 
 class SearchScreen extends StatefulWidget {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../../models/LatestResponse.dart';
-import '../../../../shared/components/constant.dart';
+import '../../../models/LatestResponse.dart';
+import '../../../shared/components/constant.dart';
 
 class FeachLatesMoviesItem extends StatefulWidget {
   LatestMovie? latestMovie;

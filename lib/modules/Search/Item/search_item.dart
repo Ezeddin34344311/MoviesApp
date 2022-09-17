@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:movies_app/models/TopRatedRespons.dart';
 
-import '../../../../shared/components/constant.dart';
+import '../../../shared/components/constant.dart';
 
 class SearchItem extends StatelessWidget {
   Results results ;

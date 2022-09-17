@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:movies_app/models/watch_list_model.dart';
 
-import '../../../../shared/network/firebase_function.dart';
+import '../../../shared/network/firebase_function.dart';
 import '../item/watched_list_item.dart';
 
 class WachListScreen extends StatelessWidget {

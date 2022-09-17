@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:movies_app/modules/tabs_navBar/home/screen/feach_top_rated.dart';
-import 'package:movies_app/modules/tabs_navBar/home/screen/fech_lates_movies.dart';
-import 'package:movies_app/modules/tabs_navBar/home/screen/fetch_popular_data.dart';
+import 'package:movies_app/modules/home/screen/feach_top_rated.dart';
+import 'package:movies_app/modules/home/screen/fech_lates_movies.dart';
+import 'package:movies_app/modules/home/screen/fetch_popular_data.dart';
 
 
 

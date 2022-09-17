@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../../models/LatestResponse.dart';
-import '../../../../shared/network/api_manager.dart';
+import '../../../models/LatestResponse.dart';
+import '../../../shared/network/api_manager.dart';
 import '../Item/feach_lates_movies_item.dart';
 
 class FechLatestApi extends StatefulWidget {

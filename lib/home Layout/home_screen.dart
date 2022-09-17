@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import '../modules/tabs_navBar/Search/screen/Search.dart';
-import '../modules/tabs_navBar/WatchedList/screen/watch_list_screen.dart';
-import '../modules/tabs_navBar/browser/Screen/browser_screen.dart';
-import '../modules/tabs_navBar/home/home_screen.dart';
+import '../modules/Search/screen/Search.dart';
+import '../modules/WatchedList/screen/watch_list_screen.dart';
+import '../modules/browser/Screen/browser_screen.dart';
+import '../modules/home/home_screen.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -19,10 +19,10 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      backgroundColor: Color(0xff121312),
+      backgroundColor:const  Color(0xff121312),
       bottomNavigationBar: Theme(
         data: Theme.of(context).copyWith(
-          canvasColor: Color(0xff1A1A1A)
+          canvasColor:const  Color(0xff1A1A1A)
         ),
         child: BottomNavigationBar(
           onTap: (index){
@@ -30,7 +30,7 @@ class _HomePageState extends State<HomePage> {
             setState((){});
           },
           currentIndex: neindex,
-          items: [
+          items: const [
             BottomNavigationBarItem(icon: ImageIcon(AssetImage('assets/images/home_icon.png')),label: "Home"),
             BottomNavigationBarItem(icon: ImageIcon(AssetImage('assets/images/search.png')),label: "Search",),
             BottomNavigationBarItem(icon: ImageIcon(AssetImage('assets/images/browser_icon.png')),label: "Browse"),
@@ -42,10 +42,10 @@ class _HomePageState extends State<HomePage> {
     );
   }
   List<Widget> tabs=[
-    HomeScreen(),
+   const  HomeScreen(),
     SearchScreen(),
     BrowserScreen(),
-    WachListScreen()
+   const  WachListScreen()
   ];
 }
 
