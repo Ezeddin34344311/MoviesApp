@@ -4,15 +4,15 @@ import 'package:movies_app/shared/components/components.dart';
 import 'package:movies_app/shared/network/firebase_function.dart';
 
 class AddFirebase {
-  static void addToFirebase(
-    BuildContext context,
-      {String? backdropPath,
-      num? id,
-      String? overview,
-      String? releaseDate,
-      String? title,
-      bool? video,
-      num? voteAverage}) {
+  static void addToFirebase({
+    required BuildContext context,
+    required  String? backdropPath,
+    required  num? id,
+    required  String? overview,
+    required  String? releaseDate,
+    required  String? title,
+    required  bool? video,
+    required  num? voteAverage}) {
     WatchListModel movie = WatchListModel(
       backdropPath: backdropPath,
       id: id,

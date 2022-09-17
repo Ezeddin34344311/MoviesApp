@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'home/home_screen.dart';
-import 'modules/tabs_navBar/browser/Screen/movies_filtred.dart';
+import 'package:movies_app/modules/details/screen/movies_details.dart';
+import 'home Layout/home_screen.dart';
+import 'modules/browser/Screen/movies_filtred.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 main()async{
@@ -26,7 +27,9 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         HomePage.routename : (context) => HomePage(),
-        MoviesFiltred.routeName: (context) => MoviesFiltred()
+        MoviesFiltred.routeName: (context) => MoviesFiltred(),
+        MoviesDetails.routeName: (context) => MoviesDetails(),
+        
       },
       initialRoute: HomePage.routename,
       debugShowCheckedModeBanner: false,

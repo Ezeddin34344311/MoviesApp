@@ -17,7 +17,7 @@ class _SearchScreenState extends State<SearchScreen> {
 
   @override
   Widget build(BuildContext context) {
-    Image playImage = Image.asset('assets/images/play.png',);
+    Image playImage = Image.asset('assets/images/flim-play.png',);
     var size = MediaQuery.of(context).size;
     return Container(
       margin: EdgeInsets.only(top: size.height * 0.06),

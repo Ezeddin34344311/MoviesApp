@@ -10,7 +10,7 @@ class MoviesFiltred extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var sharched = ModalRoute.of(context)?.settings.arguments as Genres;
-    Image playImage = Image.asset('assets/images/play.png',);
+    Image playImage = Image.asset('assets/images/flim-play.png',);
     return Scaffold(
       backgroundColor: Colors.transparent,
       appBar: AppBar(

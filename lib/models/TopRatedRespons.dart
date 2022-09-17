@@ -64,7 +64,7 @@ class Results {
       this.posterPath, 
       this.releaseDate, 
       this.title, 
-      this.video, 
+      this.video = false, 
       this.voteAverage, 
       this.voteCount,});
 
@@ -87,7 +87,7 @@ class Results {
   bool? adult;
   String? backdropPath;
   List<num>? genreIds;
-  num? id;
+  int? id;
   String? originalLanguage;
   String? originalTitle;
   String? overview;

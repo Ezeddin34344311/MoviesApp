@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../models/LatestResponse.dart';
+
+import '../../../models/Latest_movie.dart';
 import '../../../shared/network/api_manager.dart';
 import '../Item/feach_lates_movies_item.dart';
 
@@ -13,6 +14,7 @@ class _FechLatestApiState extends State<FechLatestApi> {
 
   @override
   Widget build(BuildContext context) {
+     Image play = Image.asset('assets/images/play.png');
     return FutureBuilder<LatestMovie>(
         future: ApiManager.getMovieslatest(),
         builder:(context,snap){
@@ -23,12 +25,12 @@ class _FechLatestApiState extends State<FechLatestApi> {
            
             return const  AlertDialog(content: Text('Error'),);
           }
-          var listOfLatest=snap.data;
+          var listOfLatest=snap.data ;
           return InkWell(
             onTap: (){
               // todo : navigator to details
             },
-            child: FeachLatesMoviesItem(latestMovie: listOfLatest),
+            child: FeachLatesMoviesItem(latestMovie: listOfLatest,play: play),
           );
         });
   }

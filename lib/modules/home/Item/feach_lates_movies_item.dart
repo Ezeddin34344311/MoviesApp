@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-import '../../../models/LatestResponse.dart';
+import '../../../models/Latest_movie.dart';
 import '../../../shared/components/constant.dart';
+
 
 class FeachLatesMoviesItem extends StatefulWidget {
   LatestMovie? latestMovie;
+  Image play ;
   
   FeachLatesMoviesItem(
-      {required this.latestMovie,});
+      {required this.latestMovie,required this.play});
 
   @override
   State<FeachLatesMoviesItem> createState() => _FeachLatesMoviesItemState();
@@ -75,9 +77,15 @@ class _FeachLatesMoviesItemState extends State<FeachLatesMoviesItem> {
                   Text(
                     widget.latestMovie?.releaseDate ?? '2018',
                     style: TextStyle(color: Colors.white, fontSize: 12),
-                  )
+                  ),
                 ],
-              ))
+              ),),
+        Positioned(
+          bottom: 60,
+          top: 0,
+          left: 40,
+          right: 40,
+          child: widget.play)
       ],
     );
   }
